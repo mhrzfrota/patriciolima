@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Padrão visual (referência: lozycreative.com)
+ *   Fundo creme, blocos de peso em vinho, texto tinta.
+ *   Títulos em Montserrat 200/300, grandes e leves; a palavra-chave em
+ *   itálico cobre. Corpo em Inter 300. Rótulos pequenos em caixa alta espaçada.
+ *   Painéis com canto de 20px; botões em pílula.
+ */
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-creme font-sans font-light text-tinta antialiased; }
+  :focus-visible { @apply rounded outline outline-2 outline-offset-4 outline-cobre; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1320px] px-5 sm:px-8; }
+  .rotulo { @apply font-sans text-[11px] font-normal uppercase tracking-[0.18em]; }
+  .pilula {
+    @apply inline-flex h-11 items-center justify-center rounded-full px-7 text-[12px] font-medium uppercase tracking-[0.14em] transition-colors duration-300;
+  }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.subir { animation: subir 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .subir { animation: none; }
+}
