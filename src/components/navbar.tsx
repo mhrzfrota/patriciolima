@@ -1,4 +1,5 @@
 import { PERFIL, linkContato } from "@/dados";
+import Logo from "./logo";
 
 const MENU = [
   { href: "#inicio", rotulo: "Home" },
@@ -11,8 +12,8 @@ export default function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 px-4 pt-4 sm:px-6">
       <div className="flex h-14 items-center justify-between px-4 text-creme sm:px-8">
-        <a href="#inicio" className="font-display text-lg font-normal tracking-[-0.01em]">
-          <span className="italic">patrício</span>lima
+        <a href="#inicio" aria-label="Patrício Lima, início">
+          <Logo titulo="" className="h-6 w-auto sm:h-7" />
         </a>
         <nav className="hidden gap-8 md:flex" aria-label="Principal">
           {MENU.map((l) => (

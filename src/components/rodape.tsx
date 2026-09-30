@@ -1,4 +1,5 @@
 import { PERFIL } from "@/dados";
+import Logo from "./logo";
 
 export default function Rodape() {
   return (
@@ -6,9 +7,7 @@ export default function Rodape() {
       <div className="shell">
         <div className="grid gap-10 sm:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <p className="font-display text-lg">
-              <span className="italic">patrício</span>lima
-            </p>
+            <Logo className="h-8 w-auto sm:h-10" />
             <p className="mt-6 text-sm text-creme/60">{PERFIL.email || "[e-mail]"}</p>
             <p className="mt-1 text-sm text-creme/60">{PERFIL.whatsapp || "[WhatsApp]"}</p>
           </div>
